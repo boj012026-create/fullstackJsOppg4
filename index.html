@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" media="all">
+    <script src="app.js" defer></script>
+    <title>Kunst Generator</title>
+</head>
+<body>
+	<header><h1>Kunst Generator</h1></header>
+	<main>
+	    <form id="art-parameters">
+		<!--square-->
+		<div class="art-input-style">
+		    <input id="show-squares" name="show-squares" type="checkbox">
+		    <label for="show-squares">Firkanter</label>
+		    <input id="amount-squares" name="amount-squares" type="number">
+		    <label for="amount-squares">antall</label>
+		</div>
+		<!--diamond-->
+		<div class="art-input-style">
+		    <input id="show-diamond" name="show-diamond" type="checkbox">
+		    <label for="show-diamond">Diamanter</label>
+		    <input id="amount-diamond" name="amount-diamond" type="number">
+		    <label for="amount-diamond">antall</label>
+		</div>
+		<!--circle-->
+		<div class="art-input-style">
+		    <input id="show-circle" name="show-circle" type="checkbox">
+		    <label for="show-circle">Sirkler</label>
+		    <input id="amount-circle" name="amount-circle" type="number">
+		    <label for="amount-circle">antall</label>
+		</div>
+		<button id="art-submit">Generer</button>
+	    </form>
+	    <article id="art-screen"></article>
+	</main>
+	<footer></footer>
+</body>
+</html>

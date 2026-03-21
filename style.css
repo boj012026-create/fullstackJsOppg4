@@ -1,0 +1,7 @@
+.art-input-style {
+    display: flex;
+    gap: 1em;
+    label: {
+	width: 9em;
+    }
+}
