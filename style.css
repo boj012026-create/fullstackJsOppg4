@@ -2,6 +2,15 @@ body {
     background: linear-gradient(45deg, wheat, white);
 }
 
+header {
+    background-color: beige;
+    font-size: 1.7em;
+    text-shadow: 0 0 2px black; 
+    border-radius: 0.5em 1em 2em 0.5em;
+    color: purple;
+    box-shadow: 4px 4px 4px;
+}
+
 form {
     display: flex;
     flex-wrap: wrap;
