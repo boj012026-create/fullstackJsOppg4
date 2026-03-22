@@ -36,16 +36,37 @@ function generate(seed) {
     return art;
 }
 
-/*returns a square with random color*/
+/*returns a shape with random color*/
 function create(shape) {
     let div = document.createElement("div");
     div.classList.add(shape);
+    div.style.backgroundColor = randHexColor();
     return div;
 }
-/*randomizes given array*/
+
+function randHexColor() {
+    const base = 16;
+    const colorsTot = 16 ** 6; //16^6 possible color combinations
+
+    //random base 10 number for a hex color
+    let randColNum = Math.floor(Math.random() * colorsTot);
+
+    //return color in hexformat
+    return `#${randColNum.toString(base).padStart(6, "0")}`;
+
+}
+
+/*Fisher Yates Algorithm
+ * randomizes given array*/
 function fisherYates(arr) {
+
+    //iterates from highest to lowest index
     for (let i = arr.length -1; i > 0; i--) {
+
+	//gets a random index j between i and 0
 	let j = Math.ceil(Math.random() * i);
+
+	//swaps elements at random index and current
 	let k = arr[i];
 	arr[i] = arr[j];
 	arr[j] = k;
