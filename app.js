@@ -16,9 +16,9 @@ console.log(artSeed);
 
 artSubmit.addEventListener("click", e => {
     e.preventDefault();//prevents page reload
-    let art = generate(artSeed);
-    fisherYates(art);
-    artScreen.replaceChildren(...art);
+    let art = generate(artSeed);//create art
+    fisherYates(art);//randomize art elements
+    artScreen.replaceChildren(...art); //replace art
     
 });
 /*returns array of art-elements*/
@@ -26,8 +26,8 @@ function generate(seed) {
     let art = [];
 
     seed.forEach(s => {//opens a shape
-	if(s.show.value) { //if checked off
-	    //create amount of given shape
+	if(s.show.checked) { //if checked off
+	   //create amount of given shape
 	   for(let e = 0; e < s.amount.value; e++) {
 	       art.push(create(s.shape));
 	   }
@@ -38,9 +38,9 @@ function generate(seed) {
 
 /*returns a shape with random color*/
 function create(shape) {
-    let div = document.createElement("div");
-    div.classList.add(shape);
-    div.style.backgroundColor = randHexColor();
+    let div = document.createElement("div");//create a div shape
+    div.classList.add(shape);//apply shape type by CSS class
+    div.style.backgroundColor = randHexColor();//give random color
     return div;
 }
 
