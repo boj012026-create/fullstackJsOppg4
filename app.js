@@ -1,4 +1,5 @@
 const artSubmit = document.getElementById("art-submit");
+const artScreen = document.getElementById("art-screen"); 
 
 const artSeed = [
     {	shape: "square",
@@ -14,10 +15,23 @@ const artSeed = [
 
 artSubmit.addEventListener("click", e => {
     e.preventDefault();//prevents page reload
-    console.log(artSeed);
-    console.log(rand(0, 1));
+    let square = createSquare();
+    let diamond = squareToDiamond(square);
+    artScreen.appendChild(square);
     
 });
+
+/*returns a square with random color*/
+function createSquare() {
+    let shape = document.createElement("div");
+    shape.classList.add("square");
+    return shape;
+}
+
+function squareToDiamond(square) {
+    square.classList.add("diamond");
+    return square;
+}
 
 /*returns a random integer between positive min and max numbers*/
 function rand(min, max) {

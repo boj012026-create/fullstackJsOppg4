@@ -5,3 +5,15 @@
 	width: 9em;
     }
 }
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 5px;
+}
+
+.diamond {
+    transform: rotateZ(45deg);
+    margin: 45px;
+}
