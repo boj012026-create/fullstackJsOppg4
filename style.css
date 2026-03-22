@@ -3,6 +3,8 @@ body {
 }
 
 form {
+    display: flex;
+    flex-wrap: wrap;
     background-color: beige;
     border-radius: 4em 2em;
     padding: 1em;
