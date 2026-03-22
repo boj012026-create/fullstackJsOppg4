@@ -17,8 +17,8 @@ console.log(artSeed);
 artSubmit.addEventListener("click", e => {
     e.preventDefault();//prevents page reload
     let art = generate(artSeed);
-    console.log(art);
-    artScreen.append(...art);
+    fisherYates(art);
+    artScreen.replaceChildren(...art);
     
 });
 /*returns array of art-elements*/
@@ -42,14 +42,12 @@ function create(shape) {
     div.classList.add(shape);
     return div;
 }
-
-/*returns a random integer between positive min and max numbers*/
-function rand(min, max) {
-    let range = max - min;
-    if (isNaN(range)) {
-	throw new Error("Parameter is NaN");
+/*randomizes given array*/
+function fisherYates(arr) {
+    for (let i = arr.length -1; i > 0; i--) {
+	let j = Math.ceil(Math.random() * i);
+	let k = arr[i];
+	arr[i] = arr[j];
+	arr[j] = k;
     }
-    return Math.round(Math.random() * range + min);
 }
-
-
