@@ -15,4 +15,17 @@ const artSeed = [
 artSubmit.addEventListener("click", e => {
     e.preventDefault();//prevents page reload
     console.log(artSeed);
+    console.log(rand(0, 1));
+    
 });
+
+/*returns a random integer between positive min and max numbers*/
+function rand(min, max) {
+    let range = max - min;
+    if (isNaN(range)) {
+	throw new Error("Parameter is NaN");
+    }
+    return Math.round(Math.random() * range + min);
+}
+
+
