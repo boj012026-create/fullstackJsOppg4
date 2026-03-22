@@ -1,4 +1,4 @@
-
+const artSubmit = document.getElementById("art-submit");
 
 const artSeed = [
     {	shape: "square",
@@ -11,4 +11,8 @@ const artSeed = [
 	show: document.getElementById("show-circle"),
 	amount: document.getElementById("amount-circle")}
 ];
-console.log(artSeed);
+
+artSubmit.addEventListener("click", e => {
+    e.preventDefault();//prevents page reload
+    console.log(artSeed);
+});
