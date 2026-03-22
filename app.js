@@ -12,25 +12,35 @@ const artSeed = [
 	show: document.getElementById("show-circle"),
 	amount: document.getElementById("amount-circle")}
 ];
+console.log(artSeed);
 
 artSubmit.addEventListener("click", e => {
     e.preventDefault();//prevents page reload
-    let square = createSquare();
-    let diamond = squareToDiamond(square);
-    artScreen.appendChild(square);
+    let art = generate(artSeed);
+    console.log(art);
+    artScreen.append(...art);
     
 });
+/*returns array of art-elements*/
+function generate(seed) {
+    let art = [];
 
-/*returns a square with random color*/
-function createSquare() {
-    let shape = document.createElement("div");
-    shape.classList.add("square");
-    return shape;
+    seed.forEach(s => {//opens a shape
+	if(s.show.value) { //if checked off
+	    //create amount of given shape
+	   for(let e = 0; e < s.amount.value; e++) {
+	       art.push(create(s.shape));
+	   }
+	} 
+    });
+    return art;
 }
 
-function squareToDiamond(square) {
-    square.classList.add("diamond");
-    return square;
+/*returns a square with random color*/
+function create(shape) {
+    let div = document.createElement("div");
+    div.classList.add(shape);
+    return div;
 }
 
 /*returns a random integer between positive min and max numbers*/

@@ -6,14 +6,29 @@
     }
 }
 
+#art-screen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
 .square {
     width: 100px;
     height: 100px;
     background-color: black;
-    margin: 5px;
 }
 
 .diamond {
+    width: 71px;
+    height: 71px;
+    background-color: black;
     transform: rotateZ(45deg);
-    margin: 45px;
+    margin: 15px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
 }
